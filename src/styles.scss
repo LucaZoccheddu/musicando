@@ -2,7 +2,28 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+header {
+  background-color: rgb(80, 80, 80)!important;
+}
+
+.carousel-caption {
+  top: 27rem;
+  bottom: auto;
+
+  h3 {
+    font-family: "Homemade Apple", cursive;
+    font-size: 40px;
+    text-shadow: black 2px 3px 3px;
+  }
+}
+
+footer {
+  background-color: rgb(80, 80, 80);
+  // text-align: center;
+  padding: 20px;
+}
