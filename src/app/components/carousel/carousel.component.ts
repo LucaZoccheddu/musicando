@@ -21,5 +21,17 @@ export class CarouselComponent {
       id: 3,
       label: 'All Time Low',
     },
+    {
+      id: 4,
+      label: 'Blink-182',
+    },
+    {
+      id: 5,
+      label: '3 Doors Down',
+    },
+    {
+      id: 6,
+      label: 'Foo Fighters',
+    },
   ];
 }

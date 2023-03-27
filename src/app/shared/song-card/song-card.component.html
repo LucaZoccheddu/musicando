@@ -1,0 +1,15 @@
+<div class="card-container" *ngFor="let song of songs">
+  <div class="card">
+    <div class="card-image" [ngStyle]="{'background-image': 'url(' + song.image + ')'}"></div>
+    <div class="card-body">
+      <h5 class="card-title">{{song.titolo}}</h5>
+      <p class="card-text">
+        Artista: {{song.artist}}<br>
+        Album: {{song.album}}<br>
+        Genere: {{song.genre}}<br>
+        Data di uscita: {{song.date}}<br>
+      </p>
+      <a href="#" class="btn btn-primary">Visualizza</a>
+    </div>
+  </div>
+</div>

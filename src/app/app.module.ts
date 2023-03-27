@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SongsComponent } from './components/songs/songs.component';
 import { HomeComponent } from './components/home/home.component';
+import { SongCardComponent } from './shared/song-card/song-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './components/home/home.component';
     CarouselComponent,
     FooterComponent,
     SongsComponent,
-    HomeComponent
+    HomeComponent,
+    SongCardComponent
   ],
   imports: [
     BrowserModule,
