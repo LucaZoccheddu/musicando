@@ -1,0 +1,105 @@
+<section class="h-100 h-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img class="reg" src="../../../../assets/images/registration-image.jpg">
+          <div>
+            <h3 class="tito">Registrati</h3>
+
+            <form class="px-md-2" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+              <div class="input-comp">
+                <label class="input-lab">Nome</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="inserisci il nome" formControlName="name"/>
+                <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo nome è obbligatorio</p>
+              </div>
+              <div class="input-comp">
+                <label class="input-lab">Cognome</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" placeholder="inserisci il cognome" formControlName="lastName"/>
+                <p class="help is-danger" *ngIf="!form.get('lastName').valid && form.get('lastName').touched">Il campo cognome è obbligatorio</p>
+              </div>
+              <div class="input-comp">
+                <label class="input-lab">Username</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="inserisci l'username" formControlName="username"/>
+                <p class="help is-danger" *ngIf="!form.get('username').valid && form.get('username').touched">Il campo username è obbligatorio</p>
+              </div>
+              <div class="input-comp">
+                <label class="input-lab">Mail</label>
+                <input type="text" id="email" name="email" class="form-control" placeholder="inserisci la mail" formControlName="email"/>
+                <p class="help is-danger" *ngIf="form.controls.email.hasError('required') &&form.get('email').touched">Il campo email è obbligatorio</p>
+                <p class="help is-danger" *ngIf="form.controls['email'].hasError('email') &&form.get('email').touched">Il campo email non contiene una email valida</p>
+              </div>
+              <div class="input-comp">
+                <label class="input-lab">Password</label>
+                <!-- <input type="text" id="form3Example1q" class="form-control"/> -->
+                <p-password class="input-prime" [toggleMask]="true" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$" formControlName="password">
+                  <ng-template pTemplate="header">
+                    <h6>Scegli una password</h6>
+                  </ng-template>
+                  <ng-template pTemplate="footer">
+                    <p-divider></p-divider>
+                      <p class="mt-2">Requisiti</p>
+                    <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                      <li>Almeno un carattere minuscolo</li>
+                      <li>Almeno un carattere maiuscolo</li>
+                      <li>Almeno un carattere numerico</li>
+                      <li>Almeno un carattere speciale</li>
+                      <li>Lunghezza minima 8 caratteri</li>
+                    </ul>
+                  </ng-template>
+                </p-password>
+              </div>
+              <div class="input-comp">
+                <label class="input-lab">Reinserisci la password</label>
+                <input type="password" name="repPassword" id="repPassword" class="form-control" formControlName="repPassword"/>
+                <!-- <p class="help is-danger" *ngIf="!form.get('repPassword').valid && form.get('repPassword').touched">Il campo ripeti password è obbligatorio</p> -->
+                <p class="help is-danger" *ngIf="form.getError('diversa') && form.get('repPassword').touched">La password inserita non combacia</p>
+              </div>
+              <div class="input-comp">
+                <label class="input-lab">Data di nascita</label>
+                <p-calendar class="input-prime" formControlName="date" dateFormat="dd/mm/yy"></p-calendar>
+                <!-- <input type="text" id="form3Example1q" class="form-control"/> -->
+              </div>
+              <div class="input-comp">
+                <label class="input-lab">Seleziona i generi di musica che preferisci</label>
+                <p-multiSelect [options]="generi" defaultLabel="Seleziona i generi" optionLabel="name" display="chip" formControlName="genres"></p-multiSelect>
+              </div>
+              <div class="input-comp">
+                <div class="accordion" id="accordionTermini">
+                  <div class="accordion-item">
+                    <h3 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#terminiServizio" aria-expanded="false" aria-controls="terminiServizio">
+                        Visualizza i termini di Servizio
+                      </button>
+                    </h3>
+                    <div id="terminiServizio" class="accordion-collapse collapse" data-bs-parent="#accordionTermini">
+                      <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-comp-terms">
+                <input type="checkbox" name="temrs" id="terms" formControlName="terms">
+                <label class="form-check-label">
+                  Dichiaro di accettare i Termini del Servizio
+                </label>
+              </div>
+              <div class="terms-alert">
+                <p class="help is-danger" *ngIf="form.get('terms').hasError('required') && form.get('terms').touched">Per proseguire è obbligatorio accettare le clausole</p>
+              </div>
+
+
+            <div class="text-align">
+              <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!form.valid">Invia</button>
+            </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

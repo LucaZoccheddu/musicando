@@ -1,0 +1,56 @@
+@import "../../../../styles/colors.scss";
+
+.login-container {
+  margin: 150px 35%;
+  border: 2px solid $primary-color-1;
+  border-radius: 8px;
+  height: 420px;
+}
+
+.accedi-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.input-comp {
+  padding: 0px 40px;
+  margin-bottom: 20px;
+
+  .input-lab {
+    font-weight: 500;
+    font-size: 16px;
+    display: block;
+  }
+}
+
+.accedi-titolo-pink {
+  font-family: "Delicious Handrawn", cursive!important;
+  font-size: 40px!important;
+  text-align: center!important;
+  margin-bottom: 40px!important;
+  margin-top: 30px;
+  text-shadow: none!important;
+  color: $primary-color-4!important;
+  margin-left: 12px!important;
+}
+
+.accedi-titolo {
+  font-family: "Delicious Handrawn", cursive!important;
+  font-size: 40px!important;
+  text-align: center!important;
+  margin-bottom: 40px!important;
+  margin-top: 30px;
+  text-shadow: none!important;
+}
+
+.btn {
+  background-color: $primary-color-4;
+  border: none;
+  --bs-btn-hover-bg: $primary-color-2;
+}
+
+.text-align {
+  text-align: center;
+  margin-bottom: 20px;
+}

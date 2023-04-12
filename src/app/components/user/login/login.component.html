@@ -1,0 +1,21 @@
+<div class="login-container">
+  <div class="form-login-container">
+    <div class="accedi-container">
+      <h2 class="accedi-titolo">Accedi su </h2><h2 class="accedi-titolo-pink"> Musicando</h2>
+    </div>
+    <form #f="ngForm" (ngSubmit)="OnSubmit(f.value)">
+      <div class="input-comp">
+        <label class="input-lab">Email</label>
+        <input type="text" id="name" name="email" class="form-control" placeholder="inserisci l'email" ngModel/>
+      </div>
+      <div class="input-comp">
+        <label class="input-lab">Password</label>
+        <p-password class="input-prime" name="password" [toggleMask]="true" [feedback]="false" ngModel>
+        </p-password>
+      </div>
+      <div class="text-align">
+        <button type="submit" class="btn btn-success btn-lg mb-1">ENTRA</button>
+      </div>
+    </form>
+  </div>
+</div>

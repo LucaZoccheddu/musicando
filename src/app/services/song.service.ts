@@ -2,15 +2,25 @@ import { SONGS } from './../mocks/songs.mock';
 import { Injectable } from '@angular/core';
 import { Song } from '../models/song.model';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SongService {
+  apiBaseUrl = "/api/songs";
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getSongs(): Observable<Song[]> {
-    return of (SONGS);
+  getSongs() {
+    return this.http.get<Song[]>(`${this.apiBaseUrl}/`)
+  }
+
+  getSong(id: string): Observable<Song> {
+    return this.http.get<Song>(`${this.apiBaseUrl}/${id}`)
+  }
+
+  addSong(song: any): Observable<Song> {
+    return this.http.post<any>(`${this.apiBaseUrl}/`, song)
   }
 }

@@ -1,6 +1,7 @@
 export interface Song {
   _id: number;
-  titolo: string;
+  title?: string;
+  titolo?: string;
   album: string;
   artist: string,
   lyrics: string;
@@ -10,4 +11,5 @@ export interface Song {
   duration: string;
   video: string;
   published: boolean;
+  createdAt?: Date;
 }

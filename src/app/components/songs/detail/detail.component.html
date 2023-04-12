@@ -1,0 +1,14 @@
+<div class="song-container">
+  <div class="image" [ngStyle]="{'background-image': 'url(' + song.image + ')'}"></div>
+  <div>
+    <h2>{{song.title}}</h2>
+    <h3>Album: {{song.album}}</h3>
+    <h3>Artista: {{song.artist}}</h3>
+  </div>
+</div>
+  <div id="lyr-vid">
+    <p class="testo">Testo <br>{{song.lyrics}}</p>
+    <div>
+      <iframe width="560" height="315" [src]="transform()" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>

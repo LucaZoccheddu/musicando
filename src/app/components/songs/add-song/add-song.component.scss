@@ -1,0 +1,49 @@
+@import "../../../../styles/colors.scss";
+
+.bg-image {
+  background-image: url('../../../../assets/images/pattern.jpg');
+}
+
+.tito {
+  font-family: "Delicious Handrawn", cursive!important;
+  font-size: 40px!important;
+  text-align: center!important;
+  margin-bottom: 40px!important;
+  margin-top: 30px;
+  text-shadow: none!important;
+  color: $primary-color-4!important;
+}
+
+.input-comp {
+  padding: 0px 40px;
+  margin-bottom: 20px;
+
+  .input-lab {
+    font-weight: 500;
+    font-size: 16px;
+    display: block;
+  }
+}
+
+.card {
+  border-width: initial;
+  border-color: $primary-color-3;
+}
+
+section.vh-100.bg-image {
+  height: 1300px!important;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+input.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
+.help {
+  color: red;
+  padding-left: 14px;
+  padding-top: 10px;
+}

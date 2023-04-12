@@ -24,16 +24,14 @@
             <a href="#"><mat-icon>music_note</mat-icon></a>
             <a class="nav-link active" routerLink="canzoni">Nuove uscite</a>
           </li>
+          <li class="nav-item">
+            <a href="#"><mat-icon>add</mat-icon></a>
+            <a class="nav-link active" routerLink="canzoni/aggiungi">Aggiungi canzone</a>
+          </li>
           <li class="nav-item dropdown">
             <mat-icon>library_music</mat-icon>
-            <a
-              class="nav-link dropdown-toggle active"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-            Categorie
+            <a class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorie
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Rock</a></li>
@@ -46,6 +44,16 @@
             <a href="#"><mat-icon>alternate_email</mat-icon></a>
             <a class="nav-link active" href="#">Contatti</a>
           </li>
+          <li class="nav-item" *ngIf="!authService.isLogged()">
+            <a href="#"><mat-icon>person</mat-icon></a>
+            <a class="nav-link active" routerLink="/login">Accedi</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isLogged()">
+            <a><mat-icon>person</mat-icon></a>
+            <span class="name">Ciao {{user.name}}</span>
+            <a class="nav-link active" routerLink="/profilo"> - PROFILO</a>
+            <a class="nav-link active" (click)="logout()">- ESCI</a>
+          </li>
         </ul>
         <form class="d-flex" role="search">
           <input
@@ -54,7 +62,7 @@
             placeholder="Ricerca per titolo"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success cerca" type="submit">Ricerca</button>
+          <button class="btn btn-outline-success cerca" type="submit">Cerca</button>
         </form>
       </div>
     </div>
