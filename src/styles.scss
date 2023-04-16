@@ -45,3 +45,8 @@ h3 {
   display: flex!important;
   justify-content: center!important;
 }
+
+.descrizione-canzone .ck-editor__editable {
+  min-height: 200px;
+  max-height: 200px;
+}

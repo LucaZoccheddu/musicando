@@ -16,6 +16,7 @@ import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { FooterComponent } from './shared/footer/footer.component';
 import { SongsComponent } from './components/songs/songs.component';
@@ -27,6 +28,7 @@ import { UserComponent } from './components/user/user.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { AddSongComponent } from './components/songs/add-song/add-song.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { LoginComponent } from './components/user/login/login.component';
     UserComponent,
     RegistrationComponent,
     AddSongComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { LoginComponent } from './components/user/login/login.component';
     PaginatorModule,
     HttpClientModule,
     ToastModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

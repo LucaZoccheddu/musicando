@@ -9,3 +9,16 @@
   <h2 class="tito">Le Ultime Uscite</h2>
   <app-song-card [pag]="'home'"></app-song-card>
 </div>
+
+<ng-template [ngIf]="name">
+  <div id="container-utente">
+    <div id="dati-utente">
+      <h2>Grazie {{name}} per esserti registrato, ecco i tuoi dati:</h2>
+      <ul>
+        <li>Nome: {{name}}</li>
+        <li>Email: {{email}}</li>
+      </ul>
+      <button class="btn btn-primary btn-lg" (click)="closeModal()">Chiudi</button>
+    </div>
+  </div>
+</ng-template>

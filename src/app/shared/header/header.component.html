@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark ">
+  <nav class="navbar navbar-expand-xl bg-body-tertiary navbar-dark ">
     <div class="container-fluid">
       <img src="../../../assets/images/icona-musicando.png" class="icona-musicando" routerLink="home">
       <a class="navbar-brand" routerLink="home">Musicando</a>
@@ -24,25 +24,9 @@
             <a href="#"><mat-icon>music_note</mat-icon></a>
             <a class="nav-link active" routerLink="canzoni">Nuove uscite</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="this.user.role === 'admin'">
             <a href="#"><mat-icon>add</mat-icon></a>
             <a class="nav-link active" routerLink="canzoni/aggiungi">Aggiungi canzone</a>
-          </li>
-          <li class="nav-item dropdown">
-            <mat-icon>library_music</mat-icon>
-            <a class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorie
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Rock</a></li>
-              <li><a class="dropdown-item" href="#">Classica</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#"><mat-icon>alternate_email</mat-icon></a>
-            <a class="nav-link active" href="#">Contatti</a>
           </li>
           <li class="nav-item" *ngIf="!authService.isLogged()">
             <a href="#"><mat-icon>person</mat-icon></a>
@@ -52,7 +36,7 @@
             <a><mat-icon>person</mat-icon></a>
             <span class="name">Ciao {{user.name}}</span>
             <a class="nav-link active" routerLink="/profilo"> - PROFILO</a>
-            <a class="nav-link active" (click)="logout()">- ESCI</a>
+            <a class="nav-link active" (click)="logout()" style="cursor: pointer">- ESCI</a>
           </li>
         </ul>
         <form class="d-flex" role="search">

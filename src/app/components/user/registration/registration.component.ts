@@ -6,6 +6,7 @@ import { CustomValidator } from '../customValidator';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user.model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -24,7 +25,8 @@ export class RegistrationComponent implements OnInit{
   constructor(
     private config: PrimeNGConfig,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
     ) {}
 
   form = new FormGroup({
@@ -51,6 +53,7 @@ export class RegistrationComponent implements OnInit{
       date: this.form.value.date,
       genres: this.form.value.genres,
     }
+    this.authService.saveStorageLogin(user)
     this.userService.aggiungiUtente(user).pipe(
       take(1)
     ).subscribe({

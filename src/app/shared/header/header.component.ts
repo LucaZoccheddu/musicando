@@ -19,6 +19,8 @@ export class HeaderComponent {
   ngDoCheck(): void {
     if(JSON.parse(localStorage.getItem('user')) != null) {
       this.user = JSON.parse(localStorage.getItem('user'))
+    } else {
+      this.user = '';
     }
   }
 

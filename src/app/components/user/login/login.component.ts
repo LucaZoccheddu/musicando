@@ -27,7 +27,8 @@ export class LoginComponent {
           this.user = res;
           if (res) {
             this.authService.saveStorage(res);
-            this.router.navigate(['home']);
+            this.messageService.add({severity: 'success', summary: 'Successo!', detail: 'Il login è andato a buon fine', life: 1500})
+            setTimeout(() => this.router.navigate(['home']), 1500);
           } else {
             this.loginError = 'Email o password errati';
             this.messageService.add({severity: 'error', summary: 'Errore!', detail: 'Il login non è andato a buon fine', life: 3000})

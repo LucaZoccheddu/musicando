@@ -17,6 +17,11 @@ export class HomeComponent implements OnInit{
   constructor(private songService: SongService){};
 
   ngOnInit(): void {
+    this.prendiDatiUtente();
+    this.prendiCanzoni();
+  }
+
+  prendiCanzoni() {
     this.songService.getSongs().subscribe({
       next: (response) => {
         this.songs = response;
@@ -28,4 +33,16 @@ export class HomeComponent implements OnInit{
     });
   }
 
+  prendiDatiUtente() {
+    if (localStorage.getItem('registration')) {
+      this.name = JSON.parse(localStorage.getItem('registration')).name;
+      this.email = JSON.parse(localStorage.getItem('registration')).email;
+    }
+  }
+
+  closeModal() {
+    this.name = '';
+    this.email = '';
+    localStorage.removeItem('registration');
+  }
 }

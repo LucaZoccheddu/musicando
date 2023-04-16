@@ -40,3 +40,20 @@
 span.name {
   color: white;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+  .navbar-brand {
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1479px) {
+  .navbar-brand {
+    margin-right: 12px;
+  }
+
+  .nav-item {
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+}

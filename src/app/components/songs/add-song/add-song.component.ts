@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SongService } from 'src/app/services/song.service';
 import { take } from 'rxjs';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-song',
@@ -26,6 +27,45 @@ export class AddSongComponent {
     published: new FormControl(false),
   })
 
+  Editor = ClassicEditorBuild;
+
+  editorConfig = {
+    toolbar: {
+        items: [
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'indent',
+            'outdent',
+            '|',
+            'codeBlock',
+            'blockQuote',
+            'insertTable',
+            'undo',
+            'redo',
+        ]
+    },
+    image: {
+        toolbar: [
+            'imageStyle:full',
+            'imageStyle:side',
+            '|',
+            'imageTextAlternative'
+        ]
+    },
+    table: {
+        contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+        ]
+    },
+    height: 300,
+};
+
   constructor (
     private router: Router,
     private modalService: NgbModal,
@@ -34,6 +74,7 @@ export class AddSongComponent {
 
   onSubmit() {
     const song = this.form.value;
+    this.newSong = song;
     this.songService.addSong(song).pipe(
       take(1)
     )
@@ -45,5 +86,15 @@ export class AddSongComponent {
         console.log(error);
       }
     });
+  }
+
+  onClose() {
+    this.newSong = '';
+    this.router.navigate(['/canzoni']);
+  }
+
+  onNewSong() {
+    this.newSong = '';
+    this.form.reset();
   }
 }

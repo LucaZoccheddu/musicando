@@ -1,12 +1,6 @@
-.image {
-  height: 300px;
-  width: 300px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 2rem;
-  margin-right: 30px;
-}
+@import "../../../../styles/colors.scss";
+
+
 #left {
   float: left;
   width: 300px;
@@ -24,13 +18,231 @@
 .song-container {
   display: flex;
   align-items: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   justify-content: space-around;
   padding-left: 30px;
+  background-color: $primary-color-2;
 }
 
 #lyr-vid {
   display: flex!important;
   justify-content: space-evenly;
+  background-color: $primary-color-2;
+
+  .container-testo {
+    display: flex;
+    flex-direction: column;
+
+    .int-testo {
+      font-family: "Delicious Handrawn", cursive!important;
+      font-size: 20px!important;
+      text-align: center;
+      color: $primary-color-4;
+    }
+    .testo {
+      text-align: center;
+      color: $secondary-color-1;
+    }
+
+  }
+}
+
+.w50 {
+  width: 45%;
+
+  .image {
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    margin-right: 30px;
+    border: 2px solid $secondary-color-1;
+    float: right;
+  }
+
+}
+
+
+.w50-2 {
+  width: 55%;
+
+  .riep {
+    h2 {
+      color: $primary-color-3!important;
+    }
+
+    h3 {
+      color: $secondary-color-1!important;
+      text-shadow: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+  .song-container {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    background-color: $primary-color-2;
+  }
+
+  .w50 {
+    width: 40%;
+
+    .image {
+      height: 130px;
+      width: 130px;
+      border: 2px solid $secondary-color-1;
+    }
+  }
+
+  .w50-2 {
+    width: 60%;
+  }
+
+  #lyr-vid {
+    flex-direction: column-reverse;
+    background-color: $primary-color-2;
+
+    .int-testo {
+      font-family: "Delicious Handrawn", cursive!important;
+      font-size: 20px!important;
+      text-align: center;
+      color: $primary-color-4;
+    }
+    .testo {
+      text-align: center;
+      color: $secondary-color-1;
+    }
+
+    .vid {
+      text-align: center;
+
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .song-container {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    background-color: $primary-color-2;
+  }
+
+  .w50 {
+    width: 50%;
+
+    .image {
+      height: 170px;
+      width: 170px;
+      border: 2px solid $secondary-color-1;
+      float: right;
+    }
+  }
+
+  .w50-2 {
+    width: 50%;
+
+    .riep {
+      h2 {
+        color: $primary-color-3!important;
+      }
+
+      h3 {
+        color: $secondary-color-1!important;
+      }
+    }
+  }
+
+  #lyr-vid {
+    flex-direction: column-reverse;
+    background-color: $primary-color-2;
+
+    .int-testo {
+      font-family: "Delicious Handrawn", cursive!important;
+      font-size: 20px!important;
+      text-align: center;
+      color: $primary-color-4;
+    }
+    .testo {
+      text-align: center;
+      color: $secondary-color-1;
+    }
+
+    .vid {
+      text-align: center;
+
+      iframe {
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .song-container {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    background-color: $primary-color-2;
+  }
+
+  .w50 {
+    width: 50%;
+
+    .image {
+      height: 170px;
+      width: 170px;
+      border: 2px solid $secondary-color-1;
+      float: right;
+    }
+  }
+
+  .w50-2 {
+    width: 50%;
+
+    .riep {
+      h2 {
+        color: $primary-color-3!important;
+      }
+
+      h3 {
+        color: $secondary-color-1!important;
+      }
+    }
+  }
+
+  #lyr-vid {
+    flex-direction: column-reverse;
+    background-color: $primary-color-2;
+
+    .int-testo {
+      font-family: "Delicious Handrawn", cursive!important;
+      font-size: 20px!important;
+      text-align: center;
+      color: $primary-color-4;
+    }
+    .testo {
+      text-align: center;
+      color: $secondary-color-1;
+    }
+
+    .vid {
+      text-align: center;
+
+      iframe {
+        width: 60%;
+      }
+    }
+  }
 }

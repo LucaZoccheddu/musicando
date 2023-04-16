@@ -25,11 +25,22 @@ export class AuthService {
       username: res.username,
       email: res.email,
       password: res.password,
-      genres: res.genres
+      genres: res.genres,
+      role: res.role
     }
 
     this.userService.userRole.next(res.role);
     localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  saveStorageLogin(res: any) {
+    const user = {
+      name: res.name,
+      email: res.email,
+      password: res.password,
+      role: res.role,
+    }
+    localStorage.setItem('registration', JSON.stringify(user));
   }
 
   isLogged(): boolean {
